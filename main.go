@@ -41,6 +41,8 @@ var (
 	jenkinsUsername string
 	jenkinsPassword string
 
+	circleciToken string
+
 	showAllBuilds bool
 	interval      string
 
@@ -83,6 +85,8 @@ func init() {
 	flag.StringVar(&jenkinsBaseURI, "jenkins-uri", os.Getenv("JENKINS_BASE_URI"), "Jenkins base URI (or env var JENKINS_BASE_URI)")
 	flag.StringVar(&jenkinsUsername, "jenkins-username", os.Getenv("JENKINS_USERNAME"), "Jenkins username for authentication (or env var JENKINS_USERNAME)")
 	flag.StringVar(&jenkinsPassword, "jenkins-password", os.Getenv("JENKINS_PASSWORD"), "Jenkins password for authentication (or env var JENKINS_PASSWORD)")
+
+	flag.StringVar(&circleciToken, "circleci-token", os.Getenv("CIRCLECI_API_TOKEN"), "CircleCI API token (or env var CIRCLECI_API_TOKEN)")
 
 	flag.BoolVar(&vrsn, "version", false, "print version and exit")
 	flag.BoolVar(&vrsn, "v", false, "print version and exit (shorthand)")
